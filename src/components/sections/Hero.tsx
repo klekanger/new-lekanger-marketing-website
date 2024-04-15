@@ -27,7 +27,7 @@ export default function Hero({
 			containerClassName="py-8 h-full"
 			colors={["#13004e", "#48007e", "#7f00b1", "#FBF0FF", "#F0A000"]}
 			backgroundFill="#11001c"
-			waveWidth={40}
+			waveWidth={50}
 			blur={10}
 			canvasHeight="400px"
 			speed="slow"

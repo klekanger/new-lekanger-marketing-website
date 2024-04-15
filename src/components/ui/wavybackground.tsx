@@ -133,7 +133,7 @@ export const WavyBackground = ({
 			)}
 		>
 			<canvas
-				className="inset-0 "
+				className="inset-0"
 				ref={canvasRef}
 				id="canvas"
 				style={{
@@ -141,6 +141,8 @@ export const WavyBackground = ({
 					top: "100px",
 					zIndex: -1,
 					width: "100%",
+					maxWidth: "1280px",
+					margin: "0 auto",
 					height: `${canvasHeight}`,
 					...(isSafari ? { filter: `blur(${blur}px)` } : {}),
 				}}
