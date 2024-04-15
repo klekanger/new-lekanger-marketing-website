@@ -2,32 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-inter);
+  line-height: 1.75;
+  font-weight: 400;
+  height: 100vh;
+  max-height: 100dvh;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p {
+  @apply break-words text-medium mb-4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply break-words pb-4 mt-0 font-black;
+  font-family: var(--font-inter-tight);
+}
+
+footer {
+  @apply text-tiny;
+}
+
+
+.title {
+  @apply pt-8;
+}
+
+
+
+h1 {
+  @apply text-3xl md:text-5xl lg:text-6xl pb-8;
+}
+
+h2 {
+  @apply text-2xl md:text-4xl lg:text-5xl;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @apply text-xl md:text-2xl lg:text-3xl;
+}
+
+
+ul {
+  @apply pb-4 pl-4 list-disc;
+}
+
+.animate-checkbox:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+
+a {
+  @apply hover:text-brand-accent duration-500;
 }
