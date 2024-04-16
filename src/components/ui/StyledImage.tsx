@@ -14,13 +14,13 @@ export const StyledImage = ({
 	noShadow?: boolean;
 	priority?: boolean;
 }) => (
-	<div className="w-full rounded-xl pt-4 pb-8 flex flex-col">
+	<div className="w-full rounded-large pt-4 pb-8 flex flex-col">
 		<Image
 			src={src}
 			alt={alt}
 			priority={priority}
 			sizes="(min-width: 640px) 80vw, 100vw"
-			className={`rounded-xl w-full h-full ${
+			className={`rounded-large w-full h-full ${
 				noShadow ? "shadow-none" : "shadow-xl"
 			}`}
 		/>

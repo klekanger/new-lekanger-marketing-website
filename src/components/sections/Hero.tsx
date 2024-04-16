@@ -16,8 +16,6 @@ export default function Hero({
 
 	const { title, subtitle } = content.data;
 
-	console.log("Hero", content);
-
 	return (
 		<WavyBackground
 			className={cn(

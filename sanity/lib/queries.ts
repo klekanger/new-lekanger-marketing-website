@@ -1,3 +1,4 @@
+import { loadQuery } from "@sanity/react-loader";
 import { groq } from "next-sanity";
 
 export const frontpageFeatureQuery = groq`
@@ -69,5 +70,18 @@ export const pagesBySlugQuery = groq`
     overview,
     body,
     "slug": slug.current
+  }
+`;
+
+export const projectsBySlugQuery = groq`
+*[_type == "project" && slug.current == $slug][0] {
+    mainImage,  
+    excerpt,
+    slug,
+    title,
+    _createdAt,
+    _updatedAt,
+    _id,
+    body,
   }
 `;

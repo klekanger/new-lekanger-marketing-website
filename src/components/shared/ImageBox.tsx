@@ -28,7 +28,7 @@ export default function ImageBox({
 		<div className={`${classesWrapper}`}>
 			{imageUrl && (
 				<Image
-					className="rounded-xl w-full h-full "
+					className="rounded-large w-full h-full "
 					alt={alt}
 					width={width}
 					height={height}

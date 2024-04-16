@@ -113,7 +113,7 @@ export default defineType({
 						}),
 					],
 				}),
-				/* defineField({
+				defineField({
 					type: "youtube",
 					name: "YouTube",
 					description: "Sett inn YouTube-video.",
@@ -122,7 +122,7 @@ export default defineType({
 					type: "twitter",
 					name: "Twitter",
 					description: "Sett inn Twitter-tweet.",
-				}), */
+				}),
 			],
 		}),
 	],

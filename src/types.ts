@@ -1,5 +1,15 @@
 import { ContentSourceMap } from "next-sanity";
 import type { Image, PortableTextBlock } from "sanity";
+import {
+	ProjectPortableText,
+	internalGroqTypeReferenceTo,
+} from "../sanity.types";
+
+export type Slug = {
+	_type: "slug";
+	current?: string;
+	source?: string;
+};
 
 export type FrontSettings = {
 	_id: string;
@@ -124,9 +134,46 @@ export type PagePayload = {
 	title: string;
 	overview: PortableTextBlock[];
 	body: PortableTextBlock[];
-	slug: string;
+	slug: Slug;
+};
+export type ProjectPayload = {
+	mainImage: Image & { alt: string };
+	excerpt: PortableTextBlock[];
+	slug: Slug;
+	title: string;
+	_createdAt: string;
+	_updatedAt: string;
+	_id: string;
+	body: ProjectPortableText;
 };
 
 export type PageProps = {
-	data?: PagePayload | null;
+	data?: PagePayload | ProjectPayload | null;
+};
+
+export type ProjectProps = {
+	data?: ProjectPayload;
+};
+
+export type ResponsiveImageProps = {
+	imageData: SanityReference;
+	alt?: string;
+	className?: string;
+};
+
+export type FigureProps = {
+	value: {
+		alt?: string;
+		caption?: string;
+		asset: SanityReference;
+		_key: string;
+		_type: string;
+	};
+};
+
+export type CodeBlockProps = {
+	value: {
+		code: string;
+		language?: string;
+	};
 };

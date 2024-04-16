@@ -1,15 +1,18 @@
+import Figure from "@/components/shared/Figure";
 import ImageBox from "@/components/shared/ImageBox";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import type { PortableTextBlock } from "@portabletext/types";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { Tweet } from "react-tweet";
 import type { Image } from "sanity";
+import YouTubePlayer from "./YouTubePlayer";
+import CodeBlock from "./code-block";
 
 export function CustomPortableText({
 	paragraphClasses,
 	value,
 }: {
 	paragraphClasses?: string;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	value: any;
 }) {
 	const components: PortableTextComponents = {
@@ -63,6 +66,12 @@ export function CustomPortableText({
 				}
 				return <Tweet id={value.tweetId} />;
 			},
+
+			// Keep for legacy reasons. We're using "image" now, but used to use "figure" in the old lekanger.no blog posts
+			figure: Figure,
+
+			code: CodeBlock,
+
 			image: ({
 				value,
 			}: {
@@ -73,7 +82,7 @@ export function CustomPortableText({
 						<ImageBox
 							image={value}
 							alt={value.alt}
-							classesWrapper="w-full rounded-xl md:pt-8 flex flex-col"
+							classesWrapper="w-full rounded-large md:pt-8 flex flex-col"
 						/>
 						{value?.caption && (
 							<div className="text-sm text-foreground/70 pl-4 pt-1">
@@ -82,6 +91,17 @@ export function CustomPortableText({
 						)}
 					</div>
 				);
+			},
+
+			YouTube: ({ value }) => {
+				const { url } = value;
+				return <YouTubePlayer url={url} />;
+			},
+
+			// Keep this type for legacy reasons.
+			youtube: ({ value }) => {
+				const { url } = value;
+				return <YouTubePlayer url={url} />;
 			},
 
 			undefined: ({ value }) => {

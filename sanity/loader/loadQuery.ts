@@ -6,6 +6,7 @@ import type {
 	FrontSettings,
 	FrontTestimonial,
 	PagePayload,
+	ProjectPayload,
 } from "@/types";
 import {
 	frontpageFeatureQuery,
@@ -14,6 +15,7 @@ import {
 	frontpageServicesQuery,
 	frontpageTestimonialQuery,
 	pagesBySlugQuery,
+	projectsBySlugQuery,
 	settingsQuery,
 } from "../lib/queries";
 import { loadQuery } from "../lib/store";
@@ -76,5 +78,13 @@ export async function loadPage(slug: string) {
 		pagesBySlugQuery,
 		{ slug },
 		{ next: { tags: [`page:${slug}`] } },
+	);
+}
+
+export async function loadProject(slug: string) {
+	return loadQuery<ProjectPayload>(
+		projectsBySlugQuery,
+		{ slug },
+		{ next: { tags: [`project:${slug}`] } },
 	);
 }

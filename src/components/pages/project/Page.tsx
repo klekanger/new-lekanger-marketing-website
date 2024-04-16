@@ -32,7 +32,7 @@ export default function Page(props: PageProps) {
 							width={1600}
 							height={900}
 							alt={imageAlt}
-							className="rounded-large my-8"
+							className="rounded-large"
 						/>
 					)}
 
