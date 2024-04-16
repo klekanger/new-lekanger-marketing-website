@@ -7,7 +7,7 @@ const CodeBlock = (props: CodeBlockProps) => {
 	const language = props?.value?.language || "javascript";
 
 	return (
-		<div className="my-4 rounded-md shadow-lg sm:my-8">
+		<div className="my-4 shadow-lg sm:my-8 rounded-large overflow-hidden">
 			<SyntaxHighlighter
 				language={language}
 				showLineNumbers

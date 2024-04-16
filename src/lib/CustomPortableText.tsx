@@ -4,8 +4,8 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { Tweet } from "react-tweet";
 import type { Image } from "sanity";
+import CodeBlock from "./CodeBlock";
 import YouTubePlayer from "./YouTubePlayer";
-import CodeBlock from "./code-block";
 
 export function CustomPortableText({
 	paragraphClasses,
