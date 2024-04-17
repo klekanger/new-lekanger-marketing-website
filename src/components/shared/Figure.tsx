@@ -9,7 +9,7 @@ const Figure = (props: FigureProps) => {
 				alt={props?.value?.alt}
 				className="rounded-large shadow-lg"
 			/>
-			<figcaption className="pt-4 pl-2 text-sm italic text-gray-500 dark:text-gray-400">
+			<figcaption className="pt-4 pl-2 text-sm italic text-slate-200">
 				{props?.value?.caption}
 			</figcaption>
 		</div>
