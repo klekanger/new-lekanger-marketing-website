@@ -4,13 +4,11 @@ import CompanyLogo from "@/components/CompanyLogo";
 import NaboWebLogo from "@/components/CompanyLogo";
 import { Button, Spacer } from "@nextui-org/react";
 import { ArrowBigUp, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
 	const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
