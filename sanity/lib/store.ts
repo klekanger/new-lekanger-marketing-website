@@ -1,5 +1,3 @@
-import "server-only";
-
 import * as queryStore from "@sanity/react-loader";
 import { draftMode } from "next/headers";
 import { client } from "../lib/client";

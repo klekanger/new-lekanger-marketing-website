@@ -9,6 +9,7 @@ import type {
 	ProjectPayload,
 } from "@/types";
 import {
+	blogsBySlugQuery,
 	frontpageFeatureQuery,
 	frontpageHeroQuery,
 	frontpageInfoboxQuery,
@@ -76,6 +77,14 @@ export async function loadHomePage() {
 export async function loadPage(slug: string) {
 	return loadQuery<PagePayload>(
 		pagesBySlugQuery,
+		{ slug },
+		{ next: { tags: [`page:${slug}`] } },
+	);
+}
+
+export async function loadBlogs(slug: string) {
+	return loadQuery<PagePayload>(
+		blogsBySlugQuery,
 		{ slug },
 		{ next: { tags: [`page:${slug}`] } },
 	);

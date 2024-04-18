@@ -38,12 +38,17 @@ export function CustomPortableText({
 			checkmark: ({ children }) => {
 				return <ul className="list-none pb-6 pl-0">{children}</ul>;
 			},
+			number: ({ children }) => <ol>{children}</ol>,
 		},
 		listItem: {
 			// Ex. 1: customizing common list types
 			bullet: ({ children }) => {
 				return <li>{children}</li>;
 			},
+			number: ({ children }) => {
+				return <li>{children}</li>;
+			},
+
 			checkmark: ({ children }) => {
 				return (
 					<li className="pl-2">

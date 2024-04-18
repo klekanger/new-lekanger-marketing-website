@@ -141,7 +141,7 @@ export const WavyBackground = ({
 					top: "100px",
 					zIndex: -1,
 					width: "100%",
-					maxWidth: "1280px",
+					// maxWidth: "1280px",
 					margin: "0 auto",
 					height: `${canvasHeight}`,
 					...(isSafari ? { filter: `blur(${blur}px)` } : {}),

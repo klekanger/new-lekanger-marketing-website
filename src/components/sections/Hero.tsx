@@ -43,7 +43,7 @@ export default function Hero({
 				className="text-center text-base md:text-lg text-brand-copy-light md:text-right italic"
 				style={{ x: 50, opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
-				transition={{ duration: 0.5, ease: "easeInOut" }}
+				transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
 			>
 				{subtitle}
 			</motion.p>

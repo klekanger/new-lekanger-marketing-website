@@ -72,6 +72,17 @@ export const pagesBySlugQuery = groq`
     "slug": slug.current
   }
 `;
+export const blogsBySlugQuery = groq`
+  *[_type=="blog" && slug.current == $slug][0]{
+    _id,
+    _createdAt,
+    _updatedAt,
+    title,
+    overview,
+    body,
+    "slug": slug.current
+  }
+`;
 
 export const projectsBySlugQuery = groq`
 *[_type == "project" && slug.current == $slug][0] {

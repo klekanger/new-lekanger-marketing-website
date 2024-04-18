@@ -1,5 +1,4 @@
 import { groq } from "next-sanity";
-import "server-only";
 import { client } from "../lib/client";
 import { token } from "../lib/token";
 

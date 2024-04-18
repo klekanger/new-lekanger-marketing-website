@@ -3,6 +3,7 @@
 
 import Page from "@/components/pages/page/Page";
 import { generateStaticSlugs } from "@/sanity/loader/generateStaticSlugs";
+
 import { loadProject } from "@/sanity/loader/loadQuery";
 import { toPlainText } from "@portabletext/react";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -12,14 +13,9 @@ type Props = {
 	params: { slug: string };
 };
 
-/* export async function generateMetadata(
-	{ params }: Props,
-	parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { data: pageData } = await loadProject(params?.slug);
-	const description = pageData?.excerpt
-		? toPlainText(pageData?.overview)
-		: (await parent).description;
+	const description = toPlainText(pageData?.excerpt);
 
 	return {
 		title: `${pageData?.title}`,
@@ -27,13 +23,13 @@ type Props = {
 		openGraph: {
 			title: pageData?.title,
 			description,
-			images: ["/images/ekstrahjelp1-og-image.jpg"],
+			images: ["/images/OG_Kurt Lekanger portrett wide.webp"],
 		},
 	};
 }
- */
+
 export async function generateStaticParams() {
-	return generateStaticSlugs("page");
+	return generateStaticSlugs("project");
 }
 
 export default async function ProjectSlugRoute({
