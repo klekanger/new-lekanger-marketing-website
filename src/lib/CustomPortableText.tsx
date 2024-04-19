@@ -100,7 +100,18 @@ export function CustomPortableText({
 
 			YouTube: ({ value }) => {
 				const { url } = value;
-				return <YouTubePlayer url={url} />;
+				return (
+					<div
+						style={{
+							position: "relative",
+							paddingBottom: "56.25%",
+							paddingTop: 25,
+							height: 0,
+						}}
+					>
+						<YouTubePlayer url={url} />
+					</div>
+				);
 			},
 
 			// Keep this type for legacy reasons.
