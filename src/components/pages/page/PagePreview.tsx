@@ -6,7 +6,7 @@ import type { PagePayload } from "@/types";
 import Page from "./Page";
 
 export default function PagePreview(props: any) {
-	const { params, initial, contactContent } = props;
+	const { params, initial } = props;
 	const { data } = useQuery<PagePayload | null>(pagesBySlugQuery, params, {
 		initial,
 	});

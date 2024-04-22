@@ -5,7 +5,7 @@ export const frontpageFeatureQuery = groq`
   *[_type=="frontpage-feature"][0]{
     _id, 
     title, 
-    showQuote, 
+    showFeature, 
     subtitle, 
     bodytext,
     featureboxes[]{_key, title, moduleText}
@@ -24,6 +24,7 @@ export const frontpageTestimonialQuery = groq`
   *[_type=="frontpage-testimonial"][0]{
     _id, 
     _type,
+    showQuote,
     author,
     quote   
   }

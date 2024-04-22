@@ -28,7 +28,7 @@ export default function Hero({
 			waveWidth={50}
 			blur={10}
 			canvasHeight="400px"
-			speed="slow"
+			speed="fast"
 			waveOpacity={0.2}
 		>
 			<motion.h1

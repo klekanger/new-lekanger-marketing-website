@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"test": "vitest"
 	},
 	"dependencies": {
 		"@marsidev/react-turnstile": "^0.4.1",
@@ -17,7 +18,7 @@
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/locale-nb-no": "^1.1.7",
 		"@sanity/react-loader": "^1.9.9",
-		"@sanity/ui": "^2.0.14",
+		"@sanity/ui": "2.1.4",
 		"@sanity/vision": "^3.37.2",
 		"@sanity/visual-editing": "^1.8.8",
 		"@sentry/nextjs": "^7.94.1",
@@ -27,7 +28,7 @@
 		"get-youtube-id": "^1.0.1",
 		"lucide-react": "^0.309.0",
 		"next": "^14.2.1",
-		"next-sanity": "^7.1.4",
+		"next-sanity": "^9.0.8",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-icons": "^5.0.1",
@@ -37,7 +38,7 @@
 		"react-tweet": "^3.2.1",
 		"react-twitter-embed": "^4.0.4",
 		"resend": "^2.1.0",
-		"sanity": "^3.37.2",
+		"sanity": "3.38.0",
 		"simplex-noise": "^4.0.1",
 		"styled-components": "^6.1.8",
 		"tailwind-merge": "^2.2.2",

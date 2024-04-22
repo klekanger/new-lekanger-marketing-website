@@ -1,17 +1,27 @@
-import Page from "@/components/pages/page/Page";
+import Blog from "@/components/pages/blog/Blog";
 import { generateStaticSlugs } from "@/sanity/loader/generateStaticSlugs";
-import { loadBlogs } from "@/sanity/loader/loadQuery";
+import { loadBlog } from "@/sanity/loader/loadQuery";
 import { toPlainText } from "@portabletext/react";
 import type { Metadata, ResolvingMetadata } from "next";
+import dynamic from "next/dynamic";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
+
+const BlogPreview = dynamic(
+	() => import("@/components/pages/page/PagePreview"),
+);
 
 type Props = {
 	params: { slug: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const { data: pageData } = await loadBlogs(params?.slug);
-	const description = toPlainText(pageData?.overview);
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata,
+): Promise<Metadata> {
+	const { data: pageData } = await loadBlog(params?.slug);
+
+	const description = toPlainText(pageData?.overview ?? []) ?? "";
 
 	return {
 		title: `${pageData?.title}`,
@@ -31,11 +41,15 @@ export async function generateStaticParams() {
 export default async function BlogSlugRoute({
 	params,
 }: { params: { slug: string } }) {
-	const initial = await loadBlogs(params?.slug);
+	const initial = await loadBlog(params?.slug);
+
+	if (draftMode().isEnabled) {
+		return <BlogPreview params={params} initial={initial} />;
+	}
 
 	if (!initial?.data) {
 		notFound();
 	}
 
-	return <Page data={initial.data} />;
+	return <Blog data={initial.data} />;
 }

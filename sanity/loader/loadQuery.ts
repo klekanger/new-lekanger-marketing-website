@@ -8,6 +8,7 @@ import type {
 	PagePayload,
 	ProjectPayload,
 } from "@/types";
+import type { Settings } from "../../sanity.types";
 import {
 	blogsBySlugQuery,
 	frontpageFeatureQuery,
@@ -82,11 +83,11 @@ export async function loadPage(slug: string) {
 	);
 }
 
-export async function loadBlogs(slug: string) {
+export async function loadBlog(slug: string) {
 	return loadQuery<PagePayload>(
 		blogsBySlugQuery,
 		{ slug },
-		{ next: { tags: [`page:${slug}`] } },
+		{ next: { tags: [`blog:${slug}`] } },
 	);
 }
 
@@ -95,5 +96,13 @@ export async function loadProject(slug: string) {
 		projectsBySlugQuery,
 		{ slug },
 		{ next: { tags: [`project:${slug}`] } },
+	);
+}
+
+export async function loadSettings() {
+	return loadQuery<Settings>(
+		settingsQuery,
+		{},
+		{ next: { tags: ["settings"] } },
 	);
 }

@@ -17,7 +17,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
 	<div>
 		<h1>
-			Du har fått en melding via NaboWeb-kontaktskjemaet fra {firstName}{" "}
+			Du har fått en melding via Lekanger.no-kontaktskjemaet fra {firstName}{" "}
 			{lastName}
 		</h1>
 		<p>Kontaktinformasjon: </p>

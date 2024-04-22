@@ -1,5 +1,6 @@
 import BackButton from "@/components/ui/Backbutton";
 import { CustomPortableText } from "@/lib/CustomPortableText";
+import { formatDate } from "@/lib/formatDate";
 import { urlForImage } from "@/sanity/lib/image";
 import type { PageProps } from "@/types";
 import Image from "next/image";
@@ -11,6 +12,11 @@ export default function Page(props: PageProps) {
 		console.error("Missing data from sanity");
 		return null;
 	}
+
+	const date = formatDate({
+		created: data?._createdAt || "",
+		updated: data?._updatedAt,
+	});
 
 	let imageUrl: string | null = null;
 	let imageAlt = "";
@@ -42,6 +48,9 @@ export default function Page(props: PageProps) {
 							paragraphClasses="lg:pr-64"
 						/>
 					)}
+					<div className="ml-0 pl-0 pt-4 text-sm italic text-slate-400">
+						{date && <div>{date}</div>}
+					</div>
 					{!data && (
 						<p className="text-danger text-center">Siden ikke funnet (404)</p>
 					)}

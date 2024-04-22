@@ -10,14 +10,13 @@ export default function PrivacyPolicy() {
 					<h1>Personvernerklæring</h1>
 					<p>
 						<strong>
-							Denne personvernerklæringen forteller om hvordan naboweb.no samler
+							Denne personvernerklæringen forteller hvordan lekanger.no samler
 							inn og bruker personopplysninger.
 						</strong>
 					</p>
 					<p>
-						NaboWeb er et produkt fra Lekanger tekst og kode, et firma som
-						leverer tjenester innenfor web- og app-utvikling, kommunikasjon og
-						tekstproduksjon.
+						Lekanger tekst og kode er et firma som leverer tjenester innenfor
+						web- og app-utvikling, kommunikasjon og tekstproduksjon.
 					</p>
 					<p>
 						<strong>Behandlingsansvarlig:</strong>
@@ -29,7 +28,7 @@ export default function PrivacyPolicy() {
 							1809 Askim
 						</p>
 						<p>
-							E-post: <a href="mailto:post@naboweb.no">post@lekanger.no</a>
+							E-post: <a href="mailto:post@lekanger.no">post@lekanger.no</a>
 							<br />
 							Telefon: <a href="tel:+4740210140">+47 4021 0140</a>
 						</p>

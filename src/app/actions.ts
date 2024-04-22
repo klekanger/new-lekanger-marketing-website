@@ -1,8 +1,8 @@
 "use server";
 
 import { EmailTemplate } from "@/components/email-template";
-import { Resend } from "resend";
 import { headers } from "next/headers";
+import { Resend } from "resend";
 
 export async function sendEmail(
 	prevState: {
@@ -42,9 +42,9 @@ export async function sendEmail(
 
 		try {
 			const { data, error } = await resend.emails.send({
-				from: "post@naboweb.no",
-				to: "kurt@naboweb.no",
-				subject: `NaboWeb-kontaktskjema / E-post fra ${firstName} ${lastName}`,
+				from: "post@lekanger.no",
+				to: "kurt@lekanger.no",
+				subject: `Lekanger.no-kontaktskjema / E-post fra ${firstName} ${lastName}`,
 				text: `
         Du har fått en melding fra ${firstName} ${lastName}.
 
@@ -72,7 +72,8 @@ export async function sendEmail(
 
 			return {
 				status: 200,
-				message: "En e-post er sendt til NaboWeb. Du hører snart fra oss.",
+				message:
+					"En e-post er sendt til Lekanger tekst og kode. Du hører snart fra oss.",
 			};
 		} catch (error) {
 			return {

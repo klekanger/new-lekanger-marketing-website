@@ -1,9 +1,5 @@
-import { ContentSourceMap } from "next-sanity";
 import type { Image, PortableTextBlock } from "sanity";
-import {
-	ProjectPortableText,
-	internalGroqTypeReferenceTo,
-} from "../sanity.types";
+import type { ProjectPortableText } from "../sanity.types";
 
 export type Slug = {
 	_type: "slug";
@@ -151,6 +147,10 @@ export type PageProps = {
 	data?: PagePayload | ProjectPayload | null;
 };
 
+export type BlogProps = {
+	data?: PagePayload | ProjectPayload | null;
+};
+
 export type ProjectProps = {
 	data?: ProjectPayload;
 };
@@ -176,4 +176,9 @@ export type CodeBlockProps = {
 		code: string;
 		language?: string;
 	};
+};
+
+export type FormatDateProps = {
+	created: string;
+	updated?: string;
 };

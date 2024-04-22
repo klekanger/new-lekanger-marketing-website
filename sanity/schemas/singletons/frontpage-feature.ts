@@ -8,7 +8,7 @@ export default defineType({
 	icon: CubeIcon,
 	fields: [
 		defineField({
-			name: "showQuote",
+			name: "showFeature",
 			type: "boolean",
 			title: "Vis feature-modul på forsiden.",
 		}),

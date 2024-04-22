@@ -123,6 +123,14 @@ export default defineType({
 					name: "Twitter",
 					description: "Sett inn Twitter-tweet.",
 				}),
+				defineField({
+					type: "code",
+					name: "code",
+					title: "Sett inn kodesnutt",
+					options: {
+						language: "javascript",
+					},
+				}),
 			],
 		}),
 	],

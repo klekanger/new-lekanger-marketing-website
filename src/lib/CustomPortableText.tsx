@@ -33,6 +33,21 @@ export function CustomPortableText({
 					</a>
 				);
 			},
+			code: ({ children }) => {
+				return (
+					<code
+						style={{
+							backgroundColor: "#48007e",
+							paddingLeft: "0.125rem",
+							paddingRight: "0.125rem",
+							borderRadius: "0.2rem",
+							fontFamily: "monospace",
+						}}
+					>
+						{children}
+					</code>
+				);
+			},
 		},
 		list: {
 			checkmark: ({ children }) => {
@@ -64,7 +79,10 @@ export function CustomPortableText({
 				);
 			},
 		},
+
 		types: {
+			code: CodeBlock,
+
 			Twitter: ({ value }) => {
 				if (!value?.tweetId) {
 					return null;
@@ -74,8 +92,6 @@ export function CustomPortableText({
 
 			// Keep for legacy reasons. We're using "image" now, but used to use "figure" in the old lekanger.no blog posts
 			figure: Figure,
-
-			code: CodeBlock,
 
 			image: ({
 				value,
@@ -117,7 +133,18 @@ export function CustomPortableText({
 			// Keep this type for legacy reasons.
 			youtube: ({ value }) => {
 				const { url } = value;
-				return <YouTubePlayer url={url} />;
+				return (
+					<div
+						style={{
+							position: "relative",
+							paddingBottom: "56.25%",
+							paddingTop: 25,
+							height: 0,
+						}}
+					>
+						<YouTubePlayer url={url} />
+					</div>
+				);
 			},
 
 			undefined: ({ value }) => {

@@ -1,9 +1,8 @@
 "use client";
 
 import CompanyLogo from "@/components/CompanyLogo";
-import NaboWebLogo from "@/components/CompanyLogo";
-import { Button, Spacer } from "@nextui-org/react";
-import { ArrowBigUp, Moon, Sun } from "lucide-react";
+import { Spacer } from "@nextui-org/react";
+import { ArrowBigUp } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -46,7 +45,7 @@ export default function Footer() {
 					<span>
 						<strong>E-post: </strong>
 					</span>
-					<a href="mailto:post@naboweb.no">post@lekanger.no</a>
+					<a href="mailto:post@lekanger.no">post@lekanger.no</a>
 
 					<br />
 					<strong>Telefon: </strong>
