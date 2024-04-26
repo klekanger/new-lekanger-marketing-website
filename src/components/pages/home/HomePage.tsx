@@ -5,7 +5,7 @@ import InfoSection from "@/components/sections/InfoSection";
 import Services from "@/components/sections/Services";
 import Testimonial from "@/components/sections/Testimonial";
 import type { HomePageProps } from "@/types";
-import { Spacer } from "@nextui-org/react";
+
 
 export default function HomePage({ data }: HomePageProps) {
 	const {

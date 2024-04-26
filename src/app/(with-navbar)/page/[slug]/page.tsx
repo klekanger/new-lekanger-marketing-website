@@ -2,7 +2,7 @@ import Page from "@/components/pages/page/Page";
 import { generateStaticSlugs } from "@/sanity/loader/generateStaticSlugs";
 import { loadPage } from "@/sanity/loader/loadQuery";
 import { toPlainText } from "@portabletext/react";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
@@ -18,8 +18,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { data: pageData } = await loadPage(params?.slug);
 
 	const description = toPlainText(pageData?.overview ?? []) ?? "";
-
-	console.log("pageData", pageData);
 
 	return {
 		title: `${pageData?.title}`,
