@@ -43,37 +43,25 @@ export default function NavMenu() {
 				maxWidth="full"
 			>
 				<NavbarBrand className="pt-8">
-					<Link
-						href="/"
-						className="space-y-2 w-2/3 sm:w-3/4"
-						data-attr="navbar-logo"
-					>
+					<Link href="/" className="space-y-2 w-2/3 sm:w-3/4">
 						<CompanyLogo width="275" />
 					</Link>
 				</NavbarBrand>
 				<NavbarContent className="hidden sm:flex gap-4 p-0" justify="end">
 					<NavbarItem
-						isActive={pathname.startsWith("/services")}
+						isActive={pathname.startsWith("/page/mine-tjenester")}
 						className="self-end"
 					>
-						<Link
-							color="foreground"
-							href="/page/tjenester"
-							data-attr="navbar-services"
-						>
+						<Link color="foreground" href="/page/mine-tjenester">
 							Tjenester
 						</Link>
 					</NavbarItem>
 					<NavbarItem
-						isActive={pathname.startsWith("/page/kundecaser")}
+						isActive={pathname.startsWith("/page/prosjekter")}
 						className="self-end"
 					>
-						<Link
-							color="foreground"
-							href="/page/kundecaser"
-							data-attr="navbar-kundecaser"
-						>
-							Kundecaser
+						<Link color="foreground" href="/page/prosjekter">
+							Prosjekter
 						</Link>
 					</NavbarItem>
 
@@ -81,11 +69,7 @@ export default function NavMenu() {
 						isActive={pathname.startsWith("/#kontakt")}
 						className="self-end"
 					>
-						<Link
-							color="foreground"
-							href="/#kontakt"
-							data-attr="navbar-contact"
-						>
+						<Link color="foreground" href="/#kontakt">
 							<span className=" bg-brand-secondary2/40 rounded-full p-4 ml-8 font-semibold">
 								Kontakt meg
 							</span>
@@ -99,14 +83,13 @@ export default function NavMenu() {
 				/>
 				<NavbarMenu className="w-full pt-32 space-y-4">
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/services")}
+						isActive={pathname.startsWith("/page/mine-tjenester")}
 						className="self-center list-none"
 					>
 						<Link
 							color="foreground"
-							href="/page/tjenester"
+							href="/page/mine-tjenester"
 							className="flex gap-2"
-							data-attr="navbar-workers"
 						>
 							<CheckSquare />
 							Tjenester
@@ -114,17 +97,16 @@ export default function NavMenu() {
 					</NavbarMenuItem>
 
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/page/kundecaser")}
+						isActive={pathname.startsWith("/page/prosjekter")}
 						className="self-center list-none"
 					>
 						<Link
 							color="foreground"
-							href="/page/kundecaser"
+							href="/page/prosjekter"
 							className="flex gap-2"
-							data-attr="navbar-employers"
 						>
 							<CheckSquare />
-							Kundecaser
+							Prosjekter
 						</Link>
 					</NavbarMenuItem>
 
@@ -132,12 +114,7 @@ export default function NavMenu() {
 						isActive={pathname.startsWith("/#kontakt")}
 						className="self-center list-none"
 					>
-						<Link
-							color="foreground"
-							href="/#kontakt"
-							className="flex gap-2"
-							data-attr="navbar-about-us"
-						>
+						<Link color="foreground" href="/#kontakt" className="flex gap-2">
 							<MailOpen />
 							Kontakt meg
 						</Link>
