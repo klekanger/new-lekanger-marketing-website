@@ -67,7 +67,9 @@ export const pagesBySlugQuery = groq`
     _id,
     _createdAt,
     _updatedAt,
+    mainImage,
     title,
+    subtitle,
     overview,
     body,
     "slug": slug.current
@@ -78,6 +80,7 @@ export const blogsBySlugQuery = groq`
     _id,
     _createdAt,
     _updatedAt,
+    mainImage,
     title,
     overview,
     body,

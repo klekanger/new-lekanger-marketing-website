@@ -1,4 +1,4 @@
-import { DocumentIcon, ImageIcon } from "@sanity/icons";
+import { CheckmarkIcon, DocumentIcon, ImageIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
@@ -52,6 +52,24 @@ export default defineType({
 			validation: (rule) => rule.max(155).required(),
 		}),
 		defineField({
+			type: "image",
+			name: "mainImage",
+			title: "Hovedbilde",
+			description: "Bildet som vises øverst på siden.",
+			options: {
+				hotspot: true,
+			},
+			fields: [
+				defineField({
+					name: "alt",
+					type: "string",
+					title: "Alt-tekst",
+					description:
+						"Alternativ tekst til bildet, for tilgjengelighet for blinde og svaksynte.",
+				}),
+			],
+		}),
+		defineField({
 			type: "array",
 			name: "body",
 			title: "Brødtekst",
@@ -73,6 +91,11 @@ export default defineType({
 										name: "href",
 										type: "url",
 										title: "Url",
+										validation: (Rule) =>
+											Rule.uri({
+												scheme: ["http", "https", "mailto", "tel"],
+												allowRelative: true,
+											}),
 									},
 								],
 							},
@@ -80,13 +103,16 @@ export default defineType({
 					},
 					styles: [
 						{ title: "Normal", value: "normal" },
-						{ title: "H1", value: "h1" },
-						{ title: "H2", value: "h2" },
-						{ title: "H3", value: "h3" },
-						{ title: "H4", value: "h4" },
-						{ title: "Quote", value: "blockquote" },
+						{ title: "H2 - Ekstra stor", value: "h2" },
+						{ title: "H3 - Stor", value: "h3" },
+						{ title: "H4 - Middels", value: "h4" },
+						{ title: "Sitat", value: "blockquote" },
 					],
-					lists: [{ title: "Punktliste", value: "bullet" }],
+
+					lists: [
+						{ title: "Punktliste", value: "bullet" },
+						{ title: "Nummerert liste", value: "number" },
+					],
 				}),
 				// Custom blocks
 

@@ -38,9 +38,13 @@ export default function Blog(props: BlogProps) {
 							width={1600}
 							height={900}
 							alt={imageAlt}
-							className="rounded-large"
+							style={{ objectFit: "cover" }}
+							className="rounded-large mb-8 md:mb-16"
+							priority
 						/>
 					)}
+
+					{/* 					{"overview" in data && <CustomPortableText value={data?.overview} />} */}
 
 					{data && (
 						<CustomPortableText

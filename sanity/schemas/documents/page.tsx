@@ -14,6 +14,11 @@ export default defineType({
 			validation: (rule) => rule.required(),
 		}),
 		defineField({
+			type: "string",
+			name: "subtitle",
+			title: "Undertittel",
+		}),
+		defineField({
 			type: "slug",
 			name: "slug",
 			title: "Slug",
@@ -54,6 +59,24 @@ export default defineType({
 			validation: (rule) => rule.max(155).required(),
 		}),
 		defineField({
+			type: "image",
+			name: "mainImage",
+			title: "Hovedbilde",
+			description: "Bildet som vises øverst på siden.",
+			options: {
+				hotspot: true,
+			},
+			fields: [
+				defineField({
+					name: "alt",
+					type: "string",
+					title: "Alt-tekst",
+					description:
+						"Alternativ tekst til bildet, for tilgjengelighet for blinde og svaksynte.",
+				}),
+			],
+		}),
+		defineField({
 			type: "array",
 			name: "body",
 			title: "Brødtekst",
@@ -77,6 +100,7 @@ export default defineType({
 										validation: (Rule) =>
 											Rule.uri({
 												scheme: ["http", "https", "mailto", "tel"],
+												allowRelative: true,
 											}),
 									},
 								],
@@ -98,7 +122,7 @@ export default defineType({
 							value: "checkmark",
 							icon: CheckmarkIcon,
 							component: (props) => (
-								<span className="inline-flex items-center">
+								<span className="flex items-center">
 									<span contentEditable={false}>☑ </span>
 									{props.children}
 								</span>

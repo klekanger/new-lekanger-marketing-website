@@ -128,6 +128,8 @@ export type PagePayload = {
 	_createdAt: string;
 	_updatedAt: string;
 	title: string;
+	subtitle: string;
+	mainImage: Image & { alt: string };
 	overview: PortableTextBlock[];
 	body: PortableTextBlock[];
 	slug: Slug;
@@ -137,6 +139,7 @@ export type ProjectPayload = {
 	excerpt: PortableTextBlock[];
 	slug: Slug;
 	title: string;
+	subtitle?: string;
 	_createdAt: string;
 	_updatedAt: string;
 	_id: string;
