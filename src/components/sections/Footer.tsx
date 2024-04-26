@@ -20,7 +20,7 @@ export default function Footer() {
 			<div className="flex flex-col md:flex-row md:items-start flex-wrap m-auto justify-between items-center max-w-4xl gap-8">
 				<div className="basis-1 w-2/3 md:w-full">
 					<Link href="/" className="flex justify-center">
-						<CompanyLogo />
+						<CompanyLogo width="250px" />
 					</Link>
 					<Spacer />
 					<p className="text-center md:text-left text-xs font-light py-2 sm:py-4 sm:mx-0  w-auto md:w-full">
@@ -40,19 +40,18 @@ export default function Footer() {
 						<br />
 						1809 Askim
 					</div>
-
-					<Spacer y={4} />
-					<span>
-						<strong>E-post: </strong>
-					</span>
-					<a href="mailto:post@lekanger.no">post@lekanger.no</a>
-
-					<br />
-					<strong>Telefon: </strong>
-
-					<a href="tel:+4740210140">+47 4021 0140</a>
+					<Spacer />
 					<div>
-						<Spacer y={4} />
+						<strong>E-post: </strong>
+						<a href="mailto:post@lekanger.no">post@lekanger.no</a>
+
+						<br />
+
+						<strong>Telefon: </strong>
+						<a href="tel:+4740210140">+47 4021 0140</a>
+					</div>
+					<Spacer />
+					<div>
 						<strong>Org. nr: </strong>933085422
 					</div>
 				</address>
@@ -67,15 +66,22 @@ export default function Footer() {
 					<Link href="/privacy-policy" className="text-xs">
 						Personvern&shy;erklæring
 					</Link>
-					<Spacer y={4} />
-					<Link href="/blogg" className="text-xs">
-						→ Blogg
-					</Link>
 					<Spacer />
-					<Link href="/projects" className="text-xs">
-						→ Prosjekter
-					</Link>
-
+					<div>
+						<Link href="/page/mine-tjenester" className="text-xs">
+							→ Tjenester
+						</Link>
+					</div>
+					<div>
+						<Link href="/page/prosjekter" className="text-xs">
+							→ Prosjekter
+						</Link>
+					</div>
+					<div>
+						<Link href="/page/blog" className="text-xs">
+							→ Blogg
+						</Link>
+					</div>
 					<div />
 				</div>
 			</div>

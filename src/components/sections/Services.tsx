@@ -42,7 +42,7 @@ const StyledCard = ({
 			</div>
 			<span className="col-span-6 lg:col-span-6 h-full py-4 pr-4 flex flex-col justify-between">
 				<div className="pb-6">
-					<h3 className=" text-xl font-bold">{title}</h3>
+					<h3 className="text-xl font-bold">{title}</h3>
 					<CustomPortableText value={description} />
 				</div>
 				<Button

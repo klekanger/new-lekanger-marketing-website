@@ -32,7 +32,7 @@ export default function Hero({
 			waveOpacity={0.2}
 		>
 			<motion.h1
-				className="text-center text-4xl md:text-6xl lg:text-7xl text-brand-copy-light md:text-right py-6"
+				className="text-center text-4xl md:text-6xl lg:text-7xl text-brand-copy-light md:text-right py-6 font-black"
 				style={{ x: 50, opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
 				transition={{ duration: 0.5, ease: "easeInOut", staggerChildren: 0.3 }}

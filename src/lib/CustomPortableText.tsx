@@ -20,6 +20,15 @@ export function CustomPortableText({
 			normal: ({ children }) => {
 				return <p className={paragraphClasses}>{children}</p>;
 			},
+			h2: ({ children }) => {
+				return <h2 className="lg:pr-64">{children}</h2>;
+			},
+			h3: ({ children }) => {
+				return <h3 className="lg:pr-64">{children}</h3>;
+			},
+			h4: ({ children }) => {
+				return <h4 className="lg:pr-64">{children}</h4>;
+			},
 		},
 		marks: {
 			link: ({ children, value }) => {
@@ -67,7 +76,7 @@ export function CustomPortableText({
 			checkmark: ({ children }) => {
 				return (
 					<li className="pl-2">
-						<span className="inline-flex items-center">
+						<span className="flex items-center">
 							<FaRegCheckSquare
 								className="text-secondary hover:text-secondary-300 duration-700 hover:scale-125"
 								size={20}
@@ -106,7 +115,7 @@ export function CustomPortableText({
 							classesWrapper="w-full rounded-large md:pt-8 flex flex-col"
 						/>
 						{value?.caption && (
-							<div className="text-sm text-foreground/70 pl-4 pt-1">
+							<div className="text-sm text-foreground/80 pl-4 pt-1">
 								<em>{value.caption}</em>
 							</div>
 						)}

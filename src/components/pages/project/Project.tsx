@@ -38,7 +38,9 @@ export default function Page(props: PageProps) {
 							width={1600}
 							height={900}
 							alt={imageAlt}
-							className="rounded-large"
+							style={{ objectFit: "cover" }}
+							className="rounded-large mb-8 md:mb-16"
+							priority
 						/>
 					)}
 
