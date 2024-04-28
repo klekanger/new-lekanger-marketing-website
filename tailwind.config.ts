@@ -46,11 +46,6 @@ const config: Config = {
 					},
 				},
 			},
-			fontFamily: {
-				sans: ["var(--font-roboto)"],
-				serif: ["var(--font-righteous)"],
-				mono: ["var(--font-roboto-mono)"],
-			},
 			colors: {
 				"brand-primary": "#13004e",
 				"brand-accent": "#f0a000",
