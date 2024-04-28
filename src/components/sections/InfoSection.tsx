@@ -38,7 +38,7 @@ export default function InfoSection({
 			initial={{ opacity: 0, transform: "translateY(75px)" }}
 			whileInView={{ opacity: 1, transform: "translateY(0px)" }}
 			viewport={{ once: true }}
-			className="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-8 md:gap-8 py-16 "
+			className="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-8 md:gap-8 md:py-16 "
 		>
 			<div className="row-span-2  md:row-span-1 col-span-1">
 				<h2 className="text-3xl md:text-4xl pb-8">{title}</h2>

@@ -75,22 +75,6 @@ const config: Config = {
 	plugins: [
 		require("tailwindcss-animate"),
 		nextui({
-			layout: {
-				fontSize: {
-					tiny: "0.75rem", // text-tiny
-					small: "0.875rem", // text-small
-					medium: "1rem", // text-medium
-					large: "1.125rem", // text-large
-				},
-				lineHeight: {
-					tiny: "1rem", // text-tiny
-					small: "1.25rem", // text-small
-					medium: "1.5rem", // text-medium
-					large: "1.75rem", // text-large
-				},
-			},
-
-			// Customize NextUI theme: https://nextui.org/docs/customization/colors
 			themes: {
 				light: {
 					colors: {
