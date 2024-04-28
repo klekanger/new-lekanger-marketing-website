@@ -10,6 +10,11 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-inter)"],
+				serif: ["var(--font-inter-tight)"],
+				mono: ["var(--font-roboto-mono)"],
+			},
 			animation: {
 				spotlight: "spotlight 2s ease .75s 1 forwards",
 				shimmer: "shimmer 2s linear infinite",

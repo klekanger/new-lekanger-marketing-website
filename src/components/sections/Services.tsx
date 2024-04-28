@@ -46,7 +46,7 @@ const StyledCard = ({
 			</div>
 			<span className="col-span-6 lg:col-span-6 h-full py-4 pr-4 flex flex-col justify-between">
 				<div className="pb-6">
-					<h3 className="text-xl font-bold">{title}</h3>
+					<h3 className="text-xl font-bold pt-0">{title}</h3>
 					<CustomPortableText value={description} />
 				</div>
 				<Button
@@ -54,7 +54,7 @@ const StyledCard = ({
 					size="sm"
 					variant="bordered"
 					color="default"
-					className="rounded-full border-1 w-24 hover:border-brand-accent"
+					className="rounded-full border-1 w-24 hover:border-brand-accent text-xs"
 					href={`/page/${buttonHref}`}
 				>
 					{buttonText}
