@@ -3,6 +3,7 @@ import { urlForOpenGraphImage } from "@/sanity/lib/utils";
 import { loadSettings } from "@/sanity/loader/loadQuery";
 import { Inter, Inter_Tight } from "next/font/google";
 import { draftMode } from "next/headers";
+import Script from "next/script";
 import type { Image } from "sanity";
 import type { LocalBusiness, WithContext } from "schema-dts";
 import "./globals.css";
@@ -82,6 +83,11 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 			</head>
+			<Script
+				data-domain="lekanger.no"
+				src="https://plausible.io/js/script.js"
+			/>
+
 			<body className={`${interTight.variable} ${inter.variable}`}>
 				<Providers>
 					{children}
