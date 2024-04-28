@@ -1,6 +1,6 @@
 import type { FormatDateProps } from "@/types";
 import { format } from "date-fns";
-import norwegian from "date-fns/locale/nb";
+import { nb } from "date-fns/locale/nb";
 
 export const formatDate = ({ created, updated }: FormatDateProps) => {
 	let publishDate: string;
@@ -8,13 +8,13 @@ export const formatDate = ({ created, updated }: FormatDateProps) => {
 
 	if (created && !Number.isNaN(Date.parse(created))) {
 		publishDate = format(new Date(created), "dd. MMMM yyyy", {
-			locale: norwegian,
+			locale: nb,
 		});
 	} else publishDate = "-";
 
 	if (updated && !Number.isNaN(Date.parse(updated))) {
 		updatedDate = format(new Date(updated), "dd. MMMM yyyy", {
-			locale: norwegian,
+			locale: nb,
 		});
 	} else updatedDate = publishDate;
 

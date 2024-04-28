@@ -2,6 +2,7 @@
 // We're keeping it to not break any external links
 
 import Project from "@/components/pages/project/Project";
+import { urlForImage } from "@/sanity/lib/utils";
 import { generateStaticSlugs } from "@/sanity/loader/generateStaticSlugs";
 import { loadProject as loadProjects } from "@/sanity/loader/loadQuery";
 import { toPlainText } from "@portabletext/react";
@@ -22,13 +23,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { data: pageData } = await loadProjects(params?.slug);
 	const description = toPlainText(pageData?.excerpt ?? []) ?? "";
 
+	let ogImage = "/images/OG_Kurt Lekanger portrett wide.webp";
+	if (pageData && "mainImage" in pageData) {
+		ogImage =
+			urlForImage(pageData.mainImage)?.width(1200).height(630).url() ?? ogImage;
+	}
+
 	return {
 		title: `${pageData?.title}`,
 		description,
 		openGraph: {
 			title: pageData?.title,
 			description,
-			images: ["/images/OG_Kurt Lekanger portrett wide.webp"],
+			images: [ogImage],
 		},
 	};
 }

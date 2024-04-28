@@ -38,15 +38,15 @@ export default function InfoSection({
 			initial={{ opacity: 0, transform: "translateY(75px)" }}
 			whileInView={{ opacity: 1, transform: "translateY(0px)" }}
 			viewport={{ once: true }}
-			className="grid grid-rows-2 sm:grid-rows-1 grid-cols-1 sm:grid-cols-2 sm:grid-flow-col gap-8 sm:gap-8 py-16 "
+			className="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 md:grid-flow-col gap-8 md:gap-8 py-16 "
 		>
-			<div className="row-span-2  sm:row-span-1 col-span-1">
+			<div className="row-span-2  md:row-span-1 col-span-1">
 				<h2 className="text-3xl md:text-4xl pb-8">{title}</h2>
 
 				{body && <CustomPortableText value={body} />}
 			</div>
 
-			<motion.div className="row-span-2 sm:row-span-1 col-span-1 rounded-large overflow-hidden w-full h-full aspect-[16/10]">
+			<motion.div className="row-span-2 md:row-span-1 col-span-1 rounded-large overflow-hidden w-full h-full aspect-[16/10]">
 				{imageUrl && (
 					<Image
 						src={imageUrl}

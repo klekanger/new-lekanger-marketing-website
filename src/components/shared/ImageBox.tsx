@@ -18,14 +18,14 @@ export default function ImageBox({
 	width = 3500,
 	height = 2000,
 	size = "(min-width: 640px) 80vw, 100vw",
-	classesWrapper,
+
 	...props
 }: ImageBoxProps) {
 	const imageUrl =
 		image && urlForImage(image)?.height(height).width(width).fit("crop").url();
 
 	return (
-		<div className={`${classesWrapper}`}>
+		<div className="w-full rounded-large md:pt-8 flex flex-col">
 			{imageUrl && (
 				<Image
 					className="rounded-large w-full h-full "

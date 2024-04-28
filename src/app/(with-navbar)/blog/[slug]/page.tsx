@@ -1,4 +1,5 @@
 import Blog from "@/components/pages/blog/Blog";
+import { urlForImage } from "@/sanity/lib/utils";
 import { generateStaticSlugs } from "@/sanity/loader/generateStaticSlugs";
 import { loadBlog } from "@/sanity/loader/loadQuery";
 import { toPlainText } from "@portabletext/react";
@@ -23,13 +24,19 @@ export async function generateMetadata(
 
 	const description = toPlainText(pageData?.overview ?? []) ?? "";
 
+	let ogImage = "/images/OG_Kurt Lekanger portrett wide.webp";
+	if (pageData && "mainImage" in pageData) {
+		ogImage =
+			urlForImage(pageData.mainImage)?.width(1200).height(630).url() ?? ogImage;
+	}
+
 	return {
 		title: `${pageData?.title}`,
 		description,
 		openGraph: {
 			title: pageData?.title,
 			description,
-			images: ["/images/OG_Kurt Lekanger portrett wide.webp"],
+			images: [ogImage],
 		},
 	};
 }

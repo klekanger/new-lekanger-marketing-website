@@ -68,15 +68,30 @@ export default function ContactInfo({
 					<section className="hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4">
 						<a
 							className="cursor-pointer"
-							href="https://www.linkedin.com/in/lekanger/"
+							href="https://linkedin.com/company/lekanger"
 						>
 							<div className="flex justify-center text-4xl">
 								<FaLinkedin aria-hidden="true" />
 							</div>
 							<div className="break-words text-center">
-								<h2 className="text-lg">LinkedIn</h2>
+								<h2 className="text-lg">LinkedIn firma</h2>
 								<br />
-								linkedin.com/in/lekanger/
+								linkedin.com/company/lekanger
+							</div>
+						</a>
+					</section>
+					<section className="hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4">
+						<a
+							className="cursor-pointer"
+							href="https://linkedin.com/in/lekanger"
+						>
+							<div className="flex justify-center text-4xl">
+								<FaLinkedin aria-hidden="true" />
+							</div>
+							<div className="break-words text-center">
+								<h2 className="text-lg">LinkedIn personlig</h2>
+								<br />
+								linkedin.com/in/lekanger
 							</div>
 						</a>
 					</section>
@@ -89,21 +104,6 @@ export default function ContactInfo({
 								<h2 className="text-lg">Twitter</h2>
 								<br />
 								twitter.com/lekanger
-							</div>
-						</a>
-					</section>
-					<section className="hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4">
-						<a
-							className="cursor-pointer"
-							href="https://www.facebook.com/lekanger"
-						>
-							<div className="flex justify-center text-4xl">
-								<FaFacebook aria-hidden="true" />
-							</div>
-							<div className="break-words text-center">
-								<h2 className="text-lg">Facebook</h2>
-								<br />
-								facebook.com/lekanger
 							</div>
 						</a>
 					</section>

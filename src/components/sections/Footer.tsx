@@ -40,7 +40,7 @@ export default function Footer() {
 						<br />
 						1809 Askim
 					</div>
-					<Spacer />
+					<Spacer y={4} />
 					<div>
 						<strong>E-post: </strong>
 						<a href="mailto:post@lekanger.no">post@lekanger.no</a>
@@ -50,7 +50,7 @@ export default function Footer() {
 						<strong>Telefon: </strong>
 						<a href="tel:+4740210140">+47 4021 0140</a>
 					</div>
-					<Spacer />
+					<Spacer y={4} />
 					<div>
 						<strong>Org. nr: </strong>933085422
 					</div>
@@ -77,11 +77,11 @@ export default function Footer() {
 							→ Prosjekter
 						</Link>
 					</div>
-					<div>
+					{/* 	<div>
 						<Link href="/page/blog" className="text-xs">
 							→ Blogg
 						</Link>
-					</div>
+					</div> */}
 					<div />
 				</div>
 			</div>

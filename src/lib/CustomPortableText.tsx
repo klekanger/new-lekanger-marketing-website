@@ -1,7 +1,11 @@
 import Figure from "@/components/shared/Figure";
 import ImageBox from "@/components/shared/ImageBox";
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import { FaRegCheckSquare } from "react-icons/fa";
+import {
+	PortableText,
+	type PortableTextComponents,
+	toPlainText,
+} from "@portabletext/react";
+import { FaCheck } from "react-icons/fa";
 import { Tweet } from "react-tweet";
 import type { Image } from "sanity";
 import CodeBlock from "./CodeBlock";
@@ -76,13 +80,15 @@ export function CustomPortableText({
 			checkmark: ({ children }) => {
 				return (
 					<li className="pl-2">
-						<span className="flex items-center">
-							<FaRegCheckSquare
-								className="text-secondary hover:text-secondary-300 duration-700 hover:scale-125"
-								size={20}
-								style={{ marginRight: "0.5rem" }}
+						<span className="flex items-start">
+							<FaCheck
+								className="text-secondary hover:text-secondary-300 mr-[0.5rem]"
+								style={{
+									marginRight: "0.5rem",
+									marginTop: "0.4rem",
+								}}
 							/>
-							{children}
+							<span className="w-full lg:pr-64 leading-tight">{children}</span>
 						</span>
 					</li>
 				);
@@ -108,14 +114,10 @@ export function CustomPortableText({
 				value: Image & { alt?: string; caption?: string };
 			}) => {
 				return (
-					<div className="pb-8">
-						<ImageBox
-							image={value}
-							alt={value.alt}
-							classesWrapper="w-full rounded-large md:pt-8 flex flex-col"
-						/>
+					<div className="imagebox">
+						<ImageBox image={value} alt={value.alt} />
 						{value?.caption && (
-							<div className="text-sm text-foreground/80 pl-4 pt-1">
+							<div className="caption">
 								<em>{value.caption}</em>
 							</div>
 						)}

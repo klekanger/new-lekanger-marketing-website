@@ -31,8 +31,8 @@ export default function Feature({ content }: { content: any }) {
 							</div>
 						</div>
 						<div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-							<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-								{featureboxes.map((feature) => (
+							<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none md:grid-cols-2 md:gap-y-16">
+								{featureboxes.map((feature: any) => (
 									<div key={feature._key} className="relative pl-16">
 										<h3 className="text-xl py-0">
 											<div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-secondary">

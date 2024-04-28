@@ -2,8 +2,8 @@
 
 import { CustomPortableText } from "@/lib/CustomPortableText";
 import { urlForImage } from "@/sanity/lib/utils";
-import { FrontPageServicesProps } from "@/types";
-import { Button, Card, CardBody, CardHeader, Spacer } from "@nextui-org/react";
+import type { FrontPageServicesProps } from "@/types";
+import { Button, Card, CardBody, Link } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -14,11 +14,15 @@ const StyledCard = ({
 	title,
 	description,
 	src,
+	buttonHref,
+	buttonText,
 }: {
 	title: string;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	description: any;
 	src: string;
+	buttonHref: string;
+	buttonText: string;
 }) => (
 	<Card
 		classNames={{
@@ -46,12 +50,14 @@ const StyledCard = ({
 					<CustomPortableText value={description} />
 				</div>
 				<Button
+					as={Link}
 					size="sm"
 					variant="bordered"
 					color="default"
 					className="rounded-full border-1 w-24 hover:border-brand-accent"
+					href={`/page/${buttonHref}`}
 				>
-					Les mer
+					{buttonText}
 				</Button>
 			</span>
 		</CardBody>
@@ -76,7 +82,7 @@ export default function Services({
 				viewport={{ once: true }}
 				className="py-16 max-w-6xl m-auto"
 			>
-				<h2 className="text-center md:text-left pb-8">Mine tjenester</h2>
+				<h2 className="text-center md:text-left pb-8">{title}</h2>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{modules.map((module) => {
 						const imageUrl =
@@ -93,6 +99,8 @@ export default function Services({
 								title={module.title || "Tittel mangler"}
 								description={module.moduleText}
 								src={imageUrl || "/images/600x600.svg"}
+								buttonHref={module?.moduleLink?.slug?.current || "#"}
+								buttonText="Les mer"
 							/>
 						);
 					})}
