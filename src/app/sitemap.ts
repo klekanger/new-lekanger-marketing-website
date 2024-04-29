@@ -16,18 +16,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 1,
 		},
 
-		...pageSlugs.map((slug: string) => ({
-			url: `${BASE_URL}/page/${slug}`,
+		// biome-ignore lint/suspicious/noExplicitAny: fix later
+		...pageSlugs.map((slug: any) =>  ({
+				url: `${BASE_URL}/page/${slug?.slug}`,
+				lastModified: new Date(),
+				priority: 0.8,
+		}),
+		// biome-ignore lint/suspicious/noExplicitAny: fix later
+		...blogSlugs.map((slug: any) => ({
+			url: `${BASE_URL}/blog-page/${slug?.slug}`,
 			lastModified: new Date(),
 			priority: 0.8,
 		})),
-		...blogSlugs.map((slug: string) => ({
-			url: `${BASE_URL}/blog-page/${slug}`,
-			lastModified: new Date(),
-			priority: 0.8,
-		})),
-		...projectSlugs.map((slug: string) => ({
-			url: `${BASE_URL}/project/${slug}`,
+		// biome-ignore lint/suspicious/noExplicitAny: fix later
+		...projectSlugs.map((slug: any) => ({
+			url: `${BASE_URL}/project/${slug?.slug}`,
 			lastModified: new Date(),
 			priority: 0.8,
 		})),
