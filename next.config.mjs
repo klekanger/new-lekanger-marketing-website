@@ -21,6 +21,16 @@ const nextConfig = {
 				destination: "/",
 				permanent: true,
 			},
+			{
+				source: "/projects",
+				destination: "/page/prosjekter",
+				permanent: true,
+			},
+			{
+				source: "/about-me",
+				destination: "/",
+				permanent: true,
+			},
 		];
 	},
 };
