@@ -81,7 +81,7 @@ export default function NavMenu() {
 					aria-label={isMenuOpen ? "Lukk meny" : "Åpne meny"}
 					className="sm:hidden mr-2 mt-4"
 				/>
-				<NavbarMenu className="w-full pt-32 space-y-4">
+				<NavbarMenu className="w-full pt-32 space-y-4 bg-brand-background">
 					<NavbarMenuItem
 						isActive={pathname.startsWith("/page/mine-tjenester")}
 						className="self-center list-none"
