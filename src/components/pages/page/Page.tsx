@@ -1,6 +1,5 @@
 "use client";
 
-import ContactInfo from "@/components/sections/ContactInfo";
 import { CustomPortableText } from "@/lib/CustomPortableText";
 import { urlForImage } from "@/sanity/lib/image";
 import type { PageProps } from "@/types";
@@ -84,11 +83,6 @@ export default function Page(props: PageProps) {
 						/>
 					)}
 				</article>
-
-				<ContactInfo
-					title="Ta kontakt for en prat!"
-					subtitle="Så finner vi sammen ut hvilken løsning som passer best for deg og din bedrift."
-				/>
 
 				{!data && (
 					<p className="text-danger text-center">Siden ikke funnet (404)</p>
