@@ -66,10 +66,10 @@ export default function NavMenu() {
 					</NavbarItem>
 
 					<NavbarItem
-						isActive={pathname.startsWith("/#kontakt")}
+						isActive={pathname.startsWith("/page/kontakt-meg")}
 						className="self-end"
 					>
-						<Link color="foreground" href="/#kontakt">
+						<Link color="foreground" href="/page/kontakt-meg">
 							<span className=" bg-brand-secondary2/40 rounded-full p-4 ml-8 font-semibold">
 								Kontakt meg
 							</span>
@@ -111,10 +111,14 @@ export default function NavMenu() {
 					</NavbarMenuItem>
 
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/#kontakt")}
+						isActive={pathname.startsWith("/page/kontakt-meg")}
 						className="self-center list-none"
 					>
-						<Link color="foreground" href="/#kontakt" className="flex gap-2">
+						<Link
+							color="foreground"
+							href="/page/kontakt-meg"
+							className="flex gap-2"
+						>
 							<MailOpen />
 							Kontakt meg
 						</Link>
