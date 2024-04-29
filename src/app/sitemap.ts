@@ -17,11 +17,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		},
 
 		// biome-ignore lint/suspicious/noExplicitAny: fix later
-		...pageSlugs.map((slug: any) =>  ({
-				url: `${BASE_URL}/page/${slug?.slug}`,
-				lastModified: new Date(),
-				priority: 0.8,
-		}),
+		...pageSlugs.map((slug: any) => ({
+			url: `${BASE_URL}/page/${slug?.slug}`,
+			lastModified: new Date(),
+			priority: 0.8,
+		})),
 		// biome-ignore lint/suspicious/noExplicitAny: fix later
 		...blogSlugs.map((slug: any) => ({
 			url: `${BASE_URL}/blog-page/${slug?.slug}`,
