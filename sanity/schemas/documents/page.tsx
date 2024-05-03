@@ -23,7 +23,7 @@ export default defineType({
 			name: "slug",
 			title: "Slug",
 			description:
-				"Slug er det som kommer i slutten av URL-en. For eksempel 'about-us' i URL-en 'ekstrahjelp1.no/page/about-us'. Oppgis uten '/page/' eller lignende.",
+				"Slug er det som kommer i slutten av URL-en. For eksempel 'about-us' i URL-en 'mittnettsted.no/about-us'.",
 			options: {
 				source: "title",
 			},

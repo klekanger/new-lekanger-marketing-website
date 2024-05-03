@@ -55,7 +55,7 @@ const StyledCard = ({
 					variant="bordered"
 					color="default"
 					className="rounded-full border-1 w-24 hover:border-brand-accent text-xs"
-					href={`/page/${buttonHref}`}
+					href={`/${buttonHref}`}
 				>
 					{buttonText}
 				</Button>

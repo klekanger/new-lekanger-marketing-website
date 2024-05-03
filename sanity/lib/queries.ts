@@ -1,4 +1,3 @@
-import { loadQuery } from "@sanity/react-loader";
 import { groq } from "next-sanity";
 
 export const frontpageFeatureQuery = groq`

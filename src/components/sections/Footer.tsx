@@ -68,20 +68,16 @@ export default function Footer() {
 					</Link>
 					<Spacer />
 					<div>
-						<Link href="/page/mine-tjenester" className="text-xs">
+						<Link href="/mine-tjenester" className="text-xs">
 							→ Tjenester
 						</Link>
 					</div>
 					<div>
-						<Link href="/page/prosjekter" className="text-xs">
+						<Link href="/prosjekter" className="text-xs">
 							→ Prosjekter
 						</Link>
 					</div>
-					{/* 	<div>
-						<Link href="/page/blog" className="text-xs">
-							→ Blogg
-						</Link>
-					</div> */}
+
 					<div />
 				</div>
 			</div>

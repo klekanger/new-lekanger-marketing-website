@@ -9,7 +9,7 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 const BlogPreview = dynamic(
-	() => import("@/components/pages/page/PagePreview"),
+	() => import("@/components/pages/blog/BlogPreview"),
 );
 
 type Props = {
@@ -49,6 +49,7 @@ export default async function BlogSlugRoute({
 	params,
 }: { params: { slug: string } }) {
 	const initial = await loadBlog(params?.slug);
+	console.log("BLOGG: ", initial);
 
 	if (draftMode().isEnabled) {
 		return <BlogPreview params={params} initial={initial} />;

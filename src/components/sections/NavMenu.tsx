@@ -49,27 +49,27 @@ export default function NavMenu() {
 				</NavbarBrand>
 				<NavbarContent className="hidden sm:flex gap-4 p-0" justify="end">
 					<NavbarItem
-						isActive={pathname.startsWith("/page/mine-tjenester")}
+						isActive={pathname.startsWith("/mine-tjenester")}
 						className="self-end"
 					>
-						<Link color="foreground" href="/page/mine-tjenester">
+						<Link color="foreground" href="/mine-tjenester">
 							Tjenester
 						</Link>
 					</NavbarItem>
 					<NavbarItem
-						isActive={pathname.startsWith("/page/prosjekter")}
+						isActive={pathname.startsWith("/prosjekter")}
 						className="self-end"
 					>
-						<Link color="foreground" href="/page/prosjekter">
+						<Link color="foreground" href="/prosjekter">
 							Prosjekter
 						</Link>
 					</NavbarItem>
 
 					<NavbarItem
-						isActive={pathname.startsWith("/page/kontakt-meg")}
+						isActive={pathname.startsWith("/kontakt-meg")}
 						className="self-end"
 					>
-						<Link color="foreground" href="/page/kontakt-meg">
+						<Link color="foreground" href="/kontakt-meg">
 							<span className=" bg-brand-secondary2/40 rounded-full p-4 ml-8 font-semibold">
 								Kontakt meg
 							</span>
@@ -83,12 +83,12 @@ export default function NavMenu() {
 				/>
 				<NavbarMenu className="w-full pt-32 space-y-4 bg-brand-background">
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/page/mine-tjenester")}
+						isActive={pathname.startsWith("/mine-tjenester")}
 						className="self-center list-none"
 					>
 						<Link
 							color="foreground"
-							href="/page/mine-tjenester"
+							href="/mine-tjenester"
 							className="flex gap-2"
 						>
 							<CheckSquare />
@@ -97,28 +97,20 @@ export default function NavMenu() {
 					</NavbarMenuItem>
 
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/page/prosjekter")}
+						isActive={pathname.startsWith("/prosjekter")}
 						className="self-center list-none"
 					>
-						<Link
-							color="foreground"
-							href="/page/prosjekter"
-							className="flex gap-2"
-						>
+						<Link color="foreground" href="/prosjekter" className="flex gap-2">
 							<CheckSquare />
 							Prosjekter
 						</Link>
 					</NavbarMenuItem>
 
 					<NavbarMenuItem
-						isActive={pathname.startsWith("/page/kontakt-meg")}
+						isActive={pathname.startsWith("/kontakt-meg")}
 						className="self-center list-none"
 					>
-						<Link
-							color="foreground"
-							href="/page/kontakt-meg"
-							className="flex gap-2"
-						>
+						<Link color="foreground" href="/kontakt-meg" className="flex gap-2">
 							<MailOpen />
 							Kontakt meg
 						</Link>
