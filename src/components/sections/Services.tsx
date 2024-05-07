@@ -14,6 +14,7 @@ const StyledCard = ({
 	title,
 	description,
 	src,
+	alt,
 	buttonHref,
 	buttonText,
 }: {
@@ -21,6 +22,7 @@ const StyledCard = ({
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	description: any;
 	src: string;
+	alt: string;
 	buttonHref: string;
 	buttonText: string;
 }) => (
@@ -40,7 +42,7 @@ const StyledCard = ({
 						height={IMG_HEIGHT}
 						style={{ objectFit: "cover" }}
 						sizes="16vw"
-						alt="Nærbilde av Macbook med en kaffekopp ved siden av."
+						alt={alt}
 					/>
 				)}
 			</div>
@@ -85,6 +87,7 @@ export default function Services({
 				<h2 className="text-center md:text-left pb-8">{title}</h2>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{modules.map((module) => {
+						console.log("module ", module);
 						const imageUrl =
 							module?.image &&
 							urlForImage(module.image)
@@ -98,6 +101,7 @@ export default function Services({
 								key={module._key}
 								title={module.title || "Tittel mangler"}
 								description={module.moduleText}
+								alt={(module.image?.alt as string) ?? ""}
 								src={imageUrl || "/images/600x600.svg"}
 								buttonHref={module?.moduleLink?.slug?.current || "#"}
 								buttonText="Les mer"

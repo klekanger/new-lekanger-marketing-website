@@ -49,7 +49,6 @@ export default async function BlogSlugRoute({
 	params,
 }: { params: { slug: string } }) {
 	const initial = await loadBlog(params?.slug);
-	console.log("BLOGG: ", initial);
 
 	if (draftMode().isEnabled) {
 		return <BlogPreview params={params} initial={initial} />;
