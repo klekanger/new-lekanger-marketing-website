@@ -14,6 +14,7 @@ const StyledCard = ({
 	title,
 	description,
 	src,
+	alt,
 	buttonHref,
 	buttonText,
 }: {
@@ -21,6 +22,7 @@ const StyledCard = ({
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	description: any;
 	src: string;
+	alt: string;
 	buttonHref: string;
 	buttonText: string;
 }) => (
@@ -40,7 +42,7 @@ const StyledCard = ({
 						height={IMG_HEIGHT}
 						style={{ objectFit: "cover" }}
 						sizes="16vw"
-						alt="Nærbilde av Macbook med en kaffekopp ved siden av."
+						alt={alt}
 					/>
 				)}
 			</div>
@@ -98,6 +100,7 @@ export default function Services({
 								key={module._key}
 								title={module.title || "Tittel mangler"}
 								description={module.moduleText}
+								alt={module.image?.alt || ""}
 								src={imageUrl || "/images/600x600.svg"}
 								buttonHref={module?.moduleLink?.slug?.current || "#"}
 								buttonText="Les mer"
