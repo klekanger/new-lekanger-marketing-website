@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/formatDate";
 import { urlForImage } from "@/sanity/lib/image";
 import type { BlogProps } from "@/types";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default function Blog(props: BlogProps) {
 	const { data } = props;
@@ -44,8 +45,6 @@ export default function Blog(props: BlogProps) {
 						/>
 					)}
 
-					{/* 					{"overview" in data && <CustomPortableText value={data?.overview} />} */}
-
 					{data && (
 						<CustomPortableText
 							value={data?.body}
@@ -55,9 +54,7 @@ export default function Blog(props: BlogProps) {
 					<div className="ml-0 pl-0 pt-4 text-sm italic text-slate-400">
 						{date && <div>{date}</div>}
 					</div>
-					{!data && (
-						<p className="text-danger text-center">Siden ikke funnet (404)</p>
-					)}
+					{!data && notFound()}
 				</div>
 			</article>
 		</section>

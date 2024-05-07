@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/formatDate";
 import { urlForImage } from "@/sanity/lib/image";
 import type { PageProps } from "@/types";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default function Page(props: PageProps) {
 	const { data } = props;
@@ -53,9 +54,7 @@ export default function Page(props: PageProps) {
 					<div className="ml-0 pl-0 pt-4 text-sm italic text-slate-400">
 						{date && <div>{date}</div>}
 					</div>
-					{!data && (
-						<p className="text-danger text-center">Siden ikke funnet (404)</p>
-					)}
+					{!data && notFound()}
 				</div>
 			</article>
 		</section>
