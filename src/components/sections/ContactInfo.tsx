@@ -7,8 +7,9 @@ import {
 	FaGithub,
 	FaLinkedin,
 	FaPhone,
-	FaTwitter,
+	FaTwitter
 } from "react-icons/fa";
+import { FaBluesky } from "react-icons/fa6";
 
 export default function ContactInfo({
 	title = "Her finner du meg",
@@ -96,14 +97,14 @@ export default function ContactInfo({
 						</a>
 					</section>
 					<section className="hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4">
-						<a className="cursor-pointer" href="https://twitter.com/lekanger">
+						<a className="cursor-pointer" href="https://bsky.app/profile/lekanger.no">
 							<div className="flex justify-center text-4xl">
-								<FaTwitter aria-hidden="true" />
+								<FaBluesky aria-hidden="true" />
 							</div>
 							<div className="break-words text-center">
-								<h2 className="text-lg">Twitter</h2>
+								<h2 className="text-lg">Bluesky</h2>
 								<br />
-								twitter.com/lekanger
+								@lekanger.no
 							</div>
 						</a>
 					</section>
